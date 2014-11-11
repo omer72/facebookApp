@@ -18,7 +18,7 @@ angular.module('starter', ['ionic', 'starter.controllers','facebookSrv'])
       StatusBar.styleDefault();
     }
   });
-  FacebookSrv.init("336381943208242");
+  FacebookSrv.init("YOUR_FACEBOOK_APP_ID");
     
   if(FacebookSrv.oauthCallback($window.location.href)) {
         $state.go('app.browse');
