@@ -1,0 +1,17 @@
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button class="button-icon">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+<ion-view title="Item">
+    <ion-content>
+        <div class="card">
+		  <div class="item item-text-wrap">
+		    <div><img src="{{item.icon}}"><h3>{{item.from.name}}</h3>{{item.created_time | date:shortTime}}</div>
+		    <h2>{{item.message}}</h2>
+		    <img src="{{item.picture}}" width="200px" height="200px">
+		  </div>
+		</div>
+
+    </ion-content>
+</ion-view>
