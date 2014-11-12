@@ -102,7 +102,7 @@ angular.module('starter.controllers', [])
             });
     FacebookSrv.get('/'+$stateParams.index).then(
       function success(res) {
-        $scope.item = res.data;
+        $scope.value = res.data;
         $ionicLoading.hide();
         $scope.$broadcast('scroll.refreshComplete');
         //$ionicBackdrop.release();
@@ -113,7 +113,7 @@ angular.module('starter.controllers', [])
     });
   }
 
-    $scope.refrash = function(){
+    $scope.refresh = function(){
       loadMessages();
     }
 

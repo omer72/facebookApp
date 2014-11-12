@@ -1,17 +1,44 @@
 <ion-nav-bar class="bar-positive">
-        <ion-nav-back-button class="button-icon">
-            Back
-        </ion-nav-back-button>
-    </ion-nav-bar>
+    <ion-nav-back-button class="button-icon">
+        Back
+    </ion-nav-back-button>
+</ion-nav-bar>
 <ion-view title="Item">
     <ion-content>
-        <div class="card">
-		  <div class="item item-text-wrap">
-		    <div><img src="{{item.icon}}"><h3>{{item.from.name}}</h3>{{item.created_time | date:shortTime}}</div>
-		    <h2>{{item.message}}</h2>
-		    <img src="{{item.picture}}" width="200px" height="200px">
-		  </div>
-		</div>
+        <div class="list card">
 
+            <div class="item item-avatar">
+                <img src="{{value.icon}}">
+                <h2>{{value.from.name}}</h2>
+                <p>{{value.created_time | date:shortTime}}</p>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" src="{{value.picture}}">
+                <p>
+                    {{value.message}}
+                </p>
+                <p>
+                    <a href="#" class="subdued">{{value.likes.data.length}} Like</a>
+                    <a href="#" class="subdued">{{value.comments.data.length}} Comments</a>
+                </p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="like()">
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Comment
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>
+
+        </div>
     </ion-content>
 </ion-view>
